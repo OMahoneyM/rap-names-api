@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = 8000;
+const port = process.env.PORT || 8000;
 
 const rappers = {
     '21 savage':{
@@ -32,6 +32,6 @@ app.get('/api/:name', (req, res) => {
     res.json(rappers['dylan'])
 })
 
-app.listen(process.env.PORT || PORT, () => {
-    console.log(`The server is now running on PORT: ${PORT}`)
+app.listen(port, () => {
+    console.log(`The server is now running on PORT: ${port}`)
 })
